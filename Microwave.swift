@@ -11,7 +11,7 @@ func main() {
     let foodItems: [String] = ["Pizza", "Sub", "Soup"]
     // Displays available food to microwave.
     print("~Food~")
-    for i in 0...(foodItems.count - 1) {
+    for i in 0..<foodItems.count {
         print("\(i+1). \(foodItems[i])")
     }
 
@@ -25,9 +25,9 @@ func main() {
             // Gets the amount of food to microwave.
             if let quantityStr = readLine(), let quantity = Int(quantityStr) {
                 // Checks if the amount to microwave is in range.
-                if (quantity >= 1 && quantity <= 3) {
+                if quantity >= 1 && quantity <= 3 {
                     // Calculates the amount of time it will take to microwave.
-                    let time = CalculateTime(food: foodChoice, foodCount: quantity)
+                    let time = calculateTime(food: foodChoice, foodCount: quantity)
                     let minutes: Int = Int(time) / 60
                     let seconds: Int = Int(time) % 60
                     // Displays the time it will take to microwave.
@@ -52,7 +52,7 @@ func main() {
 }
 
 // Function to calculate the time it takes to microwave.
-func CalculateTime(food: Int, foodCount: Int) -> Float {
+func calculateTime(food: Int, foodCount: Int) -> Float {
     // Initialized variable to keep track of time.
     var totalTime: Float = 0
 
@@ -78,4 +78,5 @@ func CalculateTime(food: Int, foodCount: Int) -> Float {
 
     return totalTime
 }
+
 main()
