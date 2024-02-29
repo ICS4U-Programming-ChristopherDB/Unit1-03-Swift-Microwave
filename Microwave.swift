@@ -11,7 +11,7 @@ func main() {
     let foodItems: [String] = ["Pizza", "Sub", "Soup"]
     // Displays available food to microwave.
     print("~Food~")
-    for i in 0..<foodItems.count {
+    for iterator in 0..<foodItems.count {
         print("\(i+1). \(foodItems[i])")
     }
 
